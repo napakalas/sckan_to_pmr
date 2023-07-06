@@ -43,7 +43,7 @@ There are two scripts, `fc_completion.py` and `fc_completion_web.py`, with the s
    **Execution example :**
 
    ```
-   python fc_completion.py \ 
+   python fc_completion_web.py \ 
        --file  ../annotation.json \
        --dest ./annotation.json \
        --type exposure \
