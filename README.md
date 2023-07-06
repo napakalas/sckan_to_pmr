@@ -27,7 +27,7 @@ There are two scripts, `fc_completion.py` and `fc_completion_web.py`, with the s
        --min-sim 0.84
    ```
 2. **fc_completion_web.py**
-   This script performs a search using the web service available at http://130.216.217.220. The web service source is available at [https://github.com/napakalas/fc-pmr-search](), and the main package used by the web service is [https://github.com/napakalas/pmrsearch_webservice]().
+   This script performs a search using the web service available at http://130.216.217.220. The web service source is available at [https://github.com/napakalas/fc-pmr-search](https://github.com/napakalas/fc-pmr-search), and the main package used by the web service is [https://github.com/napakalas/pmrsearch_webservice](https://github.com/napakalas/pmrsearch_webservice).
 
    **Here is the syntax to complete the annotation.json :**
 
