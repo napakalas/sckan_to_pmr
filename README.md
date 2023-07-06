@@ -1,30 +1,55 @@
 # sckan_to_pmr
 
-A script to explore SCKAN term availability in models in the Physiome Model Repository (PMR)
+Scripts to explore SCKAN term availability in models in the Physiome Model Repository (PMR). With the annotation.json file as an input, FTU will be complemented with models in the PMR.
 
-Script to complement FTU in FC map with models in the PMR.
+There are two scripts, `fc_completion.py` and `fc_completion_web.py`, with the same usability:
 
-This script uses the file `sckan2pmr.json`, which maps the terms in SCKAN to PMR models. The suitability of the FTU to the PMR model is sought using the model term, which is generally the term in SCKAN. With this approach, there is no need for additional dependencies when implemented in mapmaker. This script can also be added directly to the `mapmaker tools`.
+1. **fc_completion.py**
+   This script uses the file `sckan2pmr.json`, which maps the terms in SCKAN to PMR models. The suitability of the FTU to the PMR model is sought using the model term, which is generally the term in SCKAN. With this approach, there is no need for additional dependencies when implemented in mapmaker. This script can also be added directly to the `mapmaker tools`.
 
-**Here is the syntax to complete the annotation.json :**
+   **Here is the syntax to complete the annotation.json :**
 
-```
-python fc_completion.py \ 
-    --file  [path to an annotation file] \
-    --dest [path to save new annotation file] \
-    --type [the object type to search (exposure|workspace|cellml), default='exposure'] \
-    --min-sim [minimum similarity of models to be added to the annotation file, default=0.85]
-```
+   ```
+   python fc_completion.py \ 
+       --file  [path to an annotation file] \
+       --dest [path to save new annotation file] \
+       --type [the object type to search (exposure|workspace|cellml), default='exposure'] \
+       --min-sim [minimum similarity of models to be added to the annotation file, default=0.85]
+   ```
 
-**Execution example :**
+   **Execution example :**
 
-```
-python fc_completion.py \ 
-    --file  ../annotation.json \
-    --dest ./annotation.json \
-    --type exposure \
-    --min-sim 0.84
-```
+   ```
+   python fc_completion.py \ 
+       --file  ../annotation.json \
+       --dest ./annotation.json \
+       --type exposure \
+       --min-sim 0.84
+   ```
+2. **fc_completion_web.py**
+   This script performs a search using the web service available at http://130.216.217.220. The web service source is available at [https://github.com/napakalas/fc-pmr-search](), and the main package used by the web service is [https://github.com/napakalas/pmrsearch_webservice]().
+
+   **Here is the syntax to complete the annotation.json :**
+
+   ```
+   python fc_completion_web.py \ 
+       --file  [path to an annotation file] \
+       --dest [path to save new annotation file] \
+       --type [the object type to search (exposure|workspace|cellml), default='exposure'] \
+       --min-sim [minimum similarity of models to be added to the annotation file, default=0.85] \
+       --c-weight [the weight of context, default=0.8]
+   ```
+
+   **Execution example :**
+
+   ```
+   python fc_completion.py \ 
+       --file  ../annotation.json \
+       --dest ./annotation.json \
+       --type exposure \
+       --min-sim 0.84 \
+       --c-weight 0.8
+    ```
 
 **The example of original file:**
 
