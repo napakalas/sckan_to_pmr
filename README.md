@@ -10,7 +10,7 @@ This script uses the file `sckan2pmr.json`, which maps the terms in SCKAN to PMR
 
 ```
 python fc_completion.py \ 
-	--file  [path to an annotation file] \
+    --file  [path to an annotation file] \
     --dest [path to save new annotation file] \
     --type [the object type to search (exposure|workspace|cellml), default='exposure'] \
     --min-sim [minimum similarity of models to be added to the annotation file, default=0.85]
@@ -20,8 +20,8 @@ python fc_completion.py \
 
 ```
 python fc_completion.py \ 
-	--file  ../annotation.json \
-   	--dest ./annotation.json \
+    --file  ../annotation.json \
+    --dest ./annotation.json \
     --type exposure \
     --min-sim 0.84
 ```
